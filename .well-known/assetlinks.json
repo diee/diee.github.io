@@ -34,5 +34,14 @@
       "sha256_cert_fingerprints":
         ["74:98:D8:F0:12:F5:72:EE:36:F2:E3:87:20:51:B5:40:3A:04:8A:FA:AE:07:37:8A:70:9F:B2:FA:CB:61:94:A5"]
     }
+  },
+  {
+   "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "net.mm2d.dev.tabs.launcher",
+      "sha256_cert_fingerprints":
+        ["9E:59:E7:58:C3:6C:A0:04:B2:B8:01:C9:80:14:2E:34:80:A7:F1:E2:62:2C:EE:AC:E2:FB:EF:39:76:85:59:4D"]
+    }
   }
 ]
