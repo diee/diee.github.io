@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        body{
+            margin: 0; /* Remove default margin */
+        }
+        iframe{      
+            display: block;  /* iframes are inline by default */   
+            height: 100vh;  /* Set height to 100% of the viewport height */   
+            width: 100vw;  /* Set width to 100% of the viewport width */     
+        }
+        h1, div, label{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 1%;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1>
+        <center>Welcome to the magical History!</center>
+    </h1>
+    <br>
+    <label>
+        <center>What I received so far:</center>
+    </label>
+    <br>
+    <div id="history">
+        <center></center>
+    </div>
+
+    <label>
+        <center>iFrame</center>
+    </label>
+
+    <iframe src="https://peconn.github.io/starters" title="Starters app"></iframe>
+    <script src="postmessage.js"></script>
+
+</body>
+
+</html>

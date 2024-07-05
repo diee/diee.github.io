@@ -1,11 +1,67 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Test page</title>
+    <link rel="manifest" href="/manifest.json">
+
 </head>
+<!-- onbeforeunload="return beforeunload()" -->
+
 <body>
-<h2>Test title</h2>
+
+
+    <img id="surprisePic"></img>
+    <h2>Test full</h2>
+
+
+    <div onclick="testFunction()"> Click for a surprise!</div>
+
+    <br>
+    <label for="name">Enter your favourite Hunter character:</label>
+    <br>
+    <input type="text" id="name" name="name" required minlength="4" maxlength="8" size="30">
+    <br>
+    <a href="https://hunterxhunter.fandom.com/wiki/Hunterpedia">Click here to go to Hunterpedia to see the full list of
+        characters</a>
+    <!-- <br>	
+    <a href="blank_page.html" target="_blank">Click here to open a new empty tab</a>
+    <br>	
+    <a href="index.html" target="_blank">Click here to open the same page in a new tab</a>
+    <br>	
+    <a href="blank_page.html">Click here to open a new empty page</a> -->
+
+    <br>
+    <div id="postMessage" onclick="postMessage()"> Click to postMessage</div>
+    <br>
+
+    <a href="postmessage.html">Click here to test postMessage API</a>
+
+
+    <div class="rect">select with optgroup and multiple</div>
+    <div class="rect">
+      <select multiple="multiple" size="6">
+        <optgroup label="Chocolate">
+          <option>Dark and not dark at the same time</option>
+          <option>Milk</option>
+          <option>White and not white at the same time</option>
+          <option>Other</option>
+        </optgroup>
+        <optgroup label="Fruit">
+          <option>Apple</option>
+          <option>Banana</option>
+          <option>Mango</option>
+          <option>Orange</option>
+        </optgroup>
+    </select>
+    </div>
+
+    <button id="butMessageClient">
+        Message Client
+    </button>
+
+    <!-- <audio controls>
+        <source src="audio.mp3" type="audio/mp3"/>
+    </audio> -->
+    <script src="application.js"></script>
 </body>
+
 </html>
