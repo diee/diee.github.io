@@ -1,75 +1,26 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.twa.example",
-      "sha256_cert_fingerprints":
-        ["74:98:D8:F0:12:F5:72:EE:36:F2:E3:87:20:51:B5:40:3A:04:8A:FA:AE:07:37:8A:70:9F:B2:FA:CB:61:94:A5"]
+      "relation": [
+        "delegate_permission/common.use_as_origin"
+      ],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.GoFundMe.GoFundMe",
+        "sha256_cert_fingerprints": [
+          "0F:34:72:96:C9:2B:F2:39:68:B2:4E:DD:E0:FB:C2:25:8A:BE:31:CB:59:FC:ED:AB:07:19:C3:25:58:C3:20:4A"
+        ]
+      }
+    },
+    {
+      "relation": [
+        "delegate_permission/common.handle_all_urls"
+      ],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.GoFundMe.GoFundMe",
+        "sha256_cert_fingerprints": [
+          "0F:34:72:96:C9:2B:F2:39:68:B2:4E:DD:E0:FB:C2:25:8A:BE:31:CB:59:FC:ED:AB:07:19:C3:25:58:C3:20:4A"
+        ]
+      }
     }
-  },
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.example.twaapp",
-      "sha256_cert_fingerprints":
-        ["9E:59:E7:58:C3:6C:A0:04:B2:B8:01:C9:80:14:2E:34:80:A7:F1:E2:62:2C:EE:AC:E2:FB:EF:39:76:85:59:4D"]
-    }
-  },
-  {
-   "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.GoFundMe.GoFundMe.debug",
-      "sha256_cert_fingerprints":
-        ["9E:59:E7:58:C3:6C:A0:04:B2:B8:01:C9:80:14:2E:34:80:A7:F1:E2:62:2C:EE:AC:E2:FB:EF:39:76:85:59:4D"]
-    }
-  },
-  {
-   "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.twa.example",
-      "sha256_cert_fingerprints":
-        ["74:98:D8:F0:12:F5:72:EE:36:F2:E3:87:20:51:B5:40:3A:04:8A:FA:AE:07:37:8A:70:9F:B2:FA:CB:61:94:A5"]
-    }
-  },
-  {
-   "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "net.mm2d.dev.tabs.launcher",
-      "sha256_cert_fingerprints":
-        ["9E:59:E7:58:C3:6C:A0:04:B2:B8:01:C9:80:14:2E:34:80:A7:F1:E2:62:2C:EE:AC:E2:FB:EF:39:76:85:59:4D"]
-    }
-  },
-  {  
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.example.twatest",
-    "sha256_cert_fingerprints": [
-      "B3:D0:6D:4F:BF:99:1D:AD:D1:06:A3:E1:CA:C1:31:55:E3:45:36:D6:0F:F6:AC:56:C7:04:76:38:18:F4:52:07"
-    ]
-  }
-},
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.GoFundMe.GoFundMe",
-      "sha256_cert_fingerprints":
-        ["0F:34:72:96:C9:2B:F2:39:68:B2:4E:DD:E0:FB:C2:25:8A:BE:31:CB:59:FC:ED:AB:07:19:C3:25:58:C3:20:4A"]
-    }
-  },
-{
-    "relation": ["delegate_permission/common.use_as_origin"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.GoFundMe.GoFundMe",
-      "sha256_cert_fingerprints":
-        ["0F:34:72:96:C9:2B:F2:39:68:B2:4E:DD:E0:FB:C2:25:8A:BE:31:CB:59:FC:ED:AB:07:19:C3:25:58:C3:20:4A"]
-    }
-  }
 ]
