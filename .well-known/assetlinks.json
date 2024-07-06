@@ -62,5 +62,14 @@
       "sha256_cert_fingerprints":
         ["0F:34:72:96:C9:2B:F2:39:68:B2:4E:DD:E0:FB:C2:25:8A:BE:31:CB:59:FC:ED:AB:07:19:C3:25:58:C3:20:4A"]
     }
+  },
+{
+    "relation": ["delegate_permission/common.use_as_origin"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.GoFundMe.GoFundMe",
+      "sha256_cert_fingerprints":
+        ["0F:34:72:96:C9:2B:F2:39:68:B2:4E:DD:E0:FB:C2:25:8A:BE:31:CB:59:FC:ED:AB:07:19:C3:25:58:C3:20:4A"]
+    }
   }
 ]
