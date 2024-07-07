@@ -9,6 +9,7 @@
 })();
 
 const channel = new MessageChannel();
+const clientButton = document.getElementById('postMessageTest');
 
 window.addEventListener("message", function (event) {
   // We are receiveing messages from any origin, you can check of the origin by
@@ -20,12 +21,18 @@ window.addEventListener("message", function (event) {
   if (typeof port === 'undefined') return;
   
   // Post message on this port.
-  port.postMessage("Test")
+  port.postMessage("Connected");
+  clientButton.disabled = false;
 
-  // Receive upcoming messages on this port. 
-  port.onmessage = function(event) {
-    console.log("[PostMessage1] Got message" + event.data);
-  };
+ clientButton.addEventListener('click', function() {
+        port.postMessage("User clicked the button!");
+    });
+
+    port.onmessage = function(event) {
+        console.log("[PostMessage] Got Message: " + event.data);
+        appendOutput(event.data);
+        port.postMessage("ACK " + event.data);
+    };
 });
 
 // var ua = navigator.userAgent.toLowerCase();
