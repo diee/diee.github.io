@@ -10,6 +10,9 @@
 
 const channel = new MessageChannel();
 const clientButton = document.getElementById('postMessageTest');
+document.getElementById("miBoton").addEventListener("click", function() {
+    alert("¡Hola! Has hecho clic en el botón.");
+});
 
 window.addEventListener("message", function (event) {
     console.log("origin message start --->");
