@@ -12,20 +12,23 @@ const channel = new MessageChannel();
 const clientButton = document.getElementById('postMessageTest');
 
 window.addEventListener("message", function (event) {
-  // We are receiveing messages from any origin, you can check of the origin by
-  // using event.origin
-  console.log("origin message start --->");
-  console.log("ports: " + event.ports);
-  // get the port then use it for communication.
-  var port = event.ports[0];
-  if (typeof port === 'undefined') return;
-  
-  // Post message on this port.
-  port.postMessage("Connected");
-  clientButton.addEventListener('click', function() {
-      port.postMessage("User clicked the button!");
-  });
+    console.log("origin message start --->");
+    console.log("ports: " + event.ports);
+    
+    var port = event.ports[0];
+    if (typeof port === 'undefined') return;
 
+    port.postMessage("Connected");
+
+    clientButton.addEventListener('click', function() {
+        port.postMessage("User clicked the button!");
+    });
+
+    port.onmessage = function(event) {
+        console.log("[PostMessage] Got Message: " + event.data);
+        appendOutput(event.data);
+        port.postMessage("ACK " + event.data);
+    };
  /*clientButton.addEventListener('click', function() {
         port.postMessage("User clicked the button!");
     });
