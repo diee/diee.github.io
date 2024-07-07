@@ -10,7 +10,7 @@
 
 const channel = new MessageChannel();
 const clientButton = document.getElementById('postMessageTest');
-document.getElementById("miBoton").addEventListener("click", function() {
+document.getElementById("postTestAlert").addEventListener("click", function() {
     alert("¡Hola! Has hecho clic en el botón.");
 });
 
