@@ -22,9 +22,12 @@ window.addEventListener("message", function (event) {
   
   // Post message on this port.
   port.postMessage("Connected");
-  /*clientButton.disabled = false;
+  clientButton.disabled = false;
+  clientButton.addEventListener('click', function() {
+      port.postMessage("User clicked the button!");
+  });
 
- clientButton.addEventListener('click', function() {
+ /*clientButton.addEventListener('click', function() {
         port.postMessage("User clicked the button!");
     });
 
