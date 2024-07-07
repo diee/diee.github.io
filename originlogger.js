@@ -20,15 +20,6 @@ window.addEventListener("message", function (event) {
 
     port.postMessage("Connected");
 
-    clientButton.addEventListener('click', function() {
-        port.postMessage("User clicked the button!");
-    });
-
-    port.onmessage = function(event) {
-        console.log("[PostMessage] Got Message: " + event.data);
-        appendOutput(event.data);
-        port.postMessage("ACK " + event.data);
-    };
  /*clientButton.addEventListener('click', function() {
         port.postMessage("User clicked the button!");
     });
