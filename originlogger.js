@@ -11,6 +11,7 @@ const channel = new MessageChannel();
 const iframe = document.getElementById('iframe');
 const output = document.getElementById('history');
 const clientButton = document.getElementById('postMessageTest');
+const messageInput = document.getElementById('messageInput');
 
 function appendOutput(msg) {
     var log = output.textContent;
@@ -31,7 +32,8 @@ window.addEventListener('message', function(event) {
     clientButton.disabled = false;
 
     clientButton.addEventListener('click', function() {
-        port.postMessage("User clicked the button!");
+        const message = messageInput.value;
+        port.postMessage(message);
     });
 
     port.onmessage = function(event) {
