@@ -5,28 +5,32 @@
         navigator.serviceWorker
             .register('./service-worker.js');
     }
-
 })();
 
 const channel = new MessageChannel();
+const iframe = document.getElementById('iframe');
+const output = document.getElementById('history');
 const clientButton = document.getElementById('postMessageTest');
 
-window.addEventListener("message", function (event) {
-  // We are receiveing messages from any origin, you can check of the origin by
-  // using event.origin
-  console.log("origin message start --->");
-  console.log("ports: " + event.ports);
-  // get the port then use it for communication.
-  var port = event.ports[0];
-  if (typeof port === 'undefined') return;
-  
-  // Post message on this port.
-  port.postMessage("Connected");
-  clientButton.addEventListener('click', function() {
-      port.postMessage("User clicked the button!");
-  });
+function appendOutput(msg) {
+    var log = output.textContent;
+    output.textContent = log + msg + "\n";
+}
 
- /*clientButton.addEventListener('click', function() {
+window.addEventListener('message', function(event) {
+    console.log("[PostMessage] Got initial message from " + event.origin);
+    appendOutput("Got initial message.");
+
+    var port = event.ports[0];
+    if (typeof port === 'undefined') return;
+
+    console.log("[PostMessage] Got message port.");
+    appendOutput("Got message port.");
+
+    port.postMessage("Connected");
+    clientButton.disabled = false;
+
+    clientButton.addEventListener('click', function() {
         port.postMessage("User clicked the button!");
     });
 
@@ -34,22 +38,16 @@ window.addEventListener("message", function (event) {
         console.log("[PostMessage] Got Message: " + event.data);
         appendOutput(event.data);
         port.postMessage("ACK " + event.data);
-    };*/
+    };
 });
 
-// var ua = navigator.userAgent.toLowerCase();
-// var isAndroid = ua.indexOf("android") > -1;
-// alert(ua + isAndroid);
-// if(!isAndroid) {
-//     iframe.addEventListener("load", () => {
-//         window.postMessage("Inital s", "*", [channel.port1]);
-//       });
-//       channel.port2.onmessage = handleMessage;
-      
-//       function handleMessage(e) {
-//          appendOutput(e.data)
-//         }
-      
-// }
+// Example of sending an initial message to establish the communication
+iframe.addEventListener("load", () => {
+    iframe.contentWindow.postMessage("Hello from main page", "*", [channel.port2]);
+});
 
-  
+channel.port1.onmessage = handleMessage;
+
+function handleMessage(e) {
+    appendOutput(e.data);
+}
