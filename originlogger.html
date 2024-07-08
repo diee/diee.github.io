@@ -1,12 +1,14 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <script src="originlogger.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostMessage Example</title>
+    <script src="originlogger.js" defer></script>
 </head>
-
 <body>
-    <button id="postMessageTest">Message Client</button>
-    <button id="postTestAlert">Post Alert</button>
+    <button id="postMessageTest">Click to postMessage</button>
+    <iframe src="about:blank" id="iframe" style="display:none;"></iframe>
+    <pre id="history"></pre>
 </body>
-
 </html>
