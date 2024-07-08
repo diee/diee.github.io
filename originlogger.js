@@ -40,6 +40,11 @@ window.addEventListener('message', function(event) {
         console.log("[PostMessage] Got Message: " + event.data);
         appendOutput(event.data);
         port.postMessage("ACK " + event.data);
+
+        if (event.data.includes("close")) {
+            // Close the browser or window
+            window.close();
+        }
     };
 });
 
