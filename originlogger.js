@@ -58,3 +58,16 @@ channel.port1.onmessage = handleMessage;
 function handleMessage(e) {
     appendOutput(e.data);
 }
+
+function notifyUrlChange(url) {
+    if (window.chrome && window.chrome.webview) {
+        window.chrome.webview.postMessage({
+            type: "URL_CHANGE",
+            url: url
+        });
+    }
+}
+
+window.addEventListener('popstate', function(event) {
+    notifyUrlChange(window.location.href);
+});
