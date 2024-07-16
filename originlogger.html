@@ -7,7 +7,7 @@
     <script src="originlogger.js" defer></script>
     <script>
          function postMessageWebView() {
-            window.postMessage({ message: "Web view message test" }, "*");
+            AndroidInterface.postMessage({ message: "Web view message test" }, "*");
         };
     </script>
 </head>
@@ -20,7 +20,7 @@
 
     <a href="gofundme://launch/fund-test">open app</a>
 
-    <button id="postMessageWebView()">Click to postMessage WEBVIEW</button>
+    <button onclick="postMessageWebView()">Click to postMessage WEBVIEW</button>
 
 </body>
 </html>
