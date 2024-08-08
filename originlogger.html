@@ -9,6 +9,10 @@
          function postMessageWebView() {
             AndroidInterface.postMessage("Web view message test");
         };
+        function launchLink() {
+            const campaignUrl = '123456';
+            window.location.href = `gofundme://launch/${campaignUrl}`;
+        };
     </script>
 </head>
 <body>
@@ -21,6 +25,8 @@
     <a href="gofundme://launch/fund-test">open app</a>
 
     <button onclick="postMessageWebView()">Click to postMessage WEBVIEW</button>
+
+    <button onclick="launchLink()">Abrir Campaña</button>
 
 </body>
 </html>
